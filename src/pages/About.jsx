@@ -249,7 +249,7 @@ export const About = () => {
   represents us. We don't forget a lead. We don't drop the ball.
   We carry the heavy lifting of your pipeline generation so you
   can focus on what you do best:{" "}
-  <span className="text-gold font-medium">closing.</span>
+  <span className="text-gold font-medium">CLOSING.</span>
 </p>
   </div>
           </div>

@@ -17,9 +17,9 @@ export const Careers = () => {
 
         <div className="space-y-4 mb-16">
           {[
-            { title: "Senior SDR (IT Services)", type: "Full-time", location: "Remote / Pune" },
-            { title: "Sales Intelligence Analyst", type: "Full-time", location: "Remote / Pune" },
-            { title: "Account Executive", type: "Full-time", location: "Remote / Pune" }
+            { title: "Senior SDR (IT Services)", type: "Full-time", location: "ONSITE / Pune" },
+            { title: "Sales Intelligence Analyst", type: "Full-time", location: "ONSITE / Pune" },
+            { title: "Account Executive", type: "Full-time", location: "ONSITE / Pune" }
           ].map((job, i) => (
             <div key={i} className="liquid-glass p-8 rounded-3xl flex flex-col md:flex-row justify-between items-center gap-6 group hover:bg-white/[0.04] transition-all">
               <div className="flex items-center gap-6">

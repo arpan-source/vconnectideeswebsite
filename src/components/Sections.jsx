@@ -94,14 +94,14 @@ export const Hero = () => {
   }, [mouseX, mouseY, isHovered]);
 
   return (
- <section className="relative min-h-screen flex flex-col items-center justify-center pt-0 sm:pt-8 md:pt-10 pb-20 px-4 sm:px-6 overflow-hidden bg-black">
+ <section className="relative min-h-[115vh] md:min-h-screen flex flex-col items-center justify-center pt-6 sm:pt-8 md:pt-10 pb-20 px-4 sm:px-6 overflow-hidden bg-black">
       {/* Background Image Container - Fixed to stay behind */}
       <div className="absolute inset-0 z-0">
         {/* Mouse move effect container */}
         <motion.div
           style={{ x: springX, y: springY }}
-          className="absolute inset-0 w-full h-full"
-        >
+            className="absolute inset-0 w-full h-full top-8 sm:top-10 md:top-12"
+  >
   <img
   src={ElephantBg}
   alt="Majestic Elephant"
@@ -112,9 +112,11 @@ export const Hero = () => {
   md:h-full
   object-cover
   object-center
-  object-[center_20%]
-  md:object-center
+  object-center
 "
+  style={{
+    objectPosition: 'center',
+  }}
   style={{
     filter: isHovered
       ? "grayscale(20%) sepia(60%) hue-rotate(5deg) saturate(180%) brightness(0.8)"

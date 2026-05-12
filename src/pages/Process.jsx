@@ -4,23 +4,21 @@ import { ArrowUpRight, Search, Database, MessageSquare, UserCheck, Handshake, Re
 import { cn } from '../lib/utils';
 import { Link } from 'react-router-dom';
 const ProcessStep = ({ number, title, desc, icon, details }) => (
-  <div className="relative pl-10 sm:pl-12 md:pl-24 pb-16 md:pb-20 last:pb-0 group">
-    {/* Line - hidden on mobile for cleaner look */}
-    <div className="absolute left-[19px] sm:left-[23px] md:left-[47px] top-8 bottom-0 w-px bg-white/5 group-last:bg-transparent hidden sm:block" />
-    
-    {/* Dot/Number - properly aligned */}
-    <div className="absolute left-0 top-0 w-10 h-10 sm:w-12 sm:h-12 md:w-20 md:h-20 rounded-full liquid-glass flex items-center justify-center z-10">
-      <div className="heading-italic text-lg sm:text-xl md:text-3xl text-gold/40 group-hover:text-gold transition-colors">
-        {number}
-      </div>
-    </div>
-
-    {/* Content with proper alignment */}
+  <div className="relative pb-16 md:pb-20 last:pb-0 group">
+    {/* Content with number and title on same row */}
     <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
-      <div className="ml-6 sm:ml-8 md:ml-12">
-        <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
-          <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold shrink-0">
-            {icon}
+      <div>
+        {/* Number and Title on the same line - Side by side */}
+        <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-6">
+          <div className="flex items-center gap-2">
+            <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full liquid-glass flex items-center justify-center">
+              <span className="heading-italic text-lg sm:text-xl text-gold/40 group-hover:text-gold transition-colors">
+                {number}
+              </span>
+            </div>
+            <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-gold/10 flex items-center justify-center text-gold">
+              {icon}
+            </div>
           </div>
           <h3 className="heading-italic text-xl sm:text-2xl md:text-3xl lg:text-4xl">
             {title}
@@ -30,7 +28,7 @@ const ProcessStep = ({ number, title, desc, icon, details }) => (
           {desc}
         </p>
       </div>
-      <div className="liquid-glass p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border-white/5 ml-6 sm:ml-8 md:ml-0">
+      <div className="liquid-glass p-4 sm:p-6 md:p-8 rounded-2xl md:rounded-3xl border-white/5">
         <h4 className="text-[10px] sm:text-[11px] font-bold uppercase tracking-widest text-white/30 mb-4 md:mb-6">
           Key Deliverables
         </h4>
@@ -46,7 +44,6 @@ const ProcessStep = ({ number, title, desc, icon, details }) => (
     </div>
   </div>
 );
-
 export const Process = () => {
   const steps = [
     {

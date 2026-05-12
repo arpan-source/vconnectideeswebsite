@@ -100,7 +100,7 @@
 }
 
 .animate-marquee {
-  animation: marquee 28s linear infinite;
+  animation: marquee 16s linear infinite;
 }
 
 /* ===== MOBILE RESPONSIVENESS ADDITIONS (318x504 and up) ===== */
