@@ -34,15 +34,15 @@ export const Careers = () => {
                   </div>
                 </div>
               </div>
-              <a href="#" className="text-gold text-[13px] font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
+              {/* <a href="#" className="text-gold text-[13px] font-bold flex items-center gap-2 group-hover:translate-x-2 transition-transform">
                 Apply Now <ArrowUpRight className="w-4 h-4" />
-              </a>
+              </a> */}
             </div>
           ))}
         </div>
 
         <div className="text-center">
-          <p className="text-white/30 text-sm font-light">Don't see a role that fits? Send your resume to <span className="text-gold">careers@vconnectiq.com</span></p>
+          <p className="text-white/30 text-sm font-light">Don't see a role that fits? Send your resume to <span className="text-gold">muskan@vconnectiq.com</span></p>
         </div>
       </div>
     </div>

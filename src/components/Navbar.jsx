@@ -29,18 +29,18 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-4 left-4 right-4 md:left-0 md:right-0 z-50 px-4 md:px-6 max-w-6xl md:mx-auto flex items-center justify-between transition-all duration-300">
+      <nav className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 max-w-6xl mx-auto flex items-center justify-between transition-all duration-300">
         <Link
-          to="/"
-          className={cn(
-            "flex items-center group rounded-full h-[52px] px-5 transition-all duration-500",
-            isScrolled
-              ? "liquid-glass border border-white/10"
-              : "bg-transparent"
-          )}
-        >
-          <Logo className="h-7 md:h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
-        </Link>
+  to="/"
+  className={cn(
+    "flex items-center group rounded-full h-[52px] px-5 transition-all duration-500",
+    isScrolled
+      ? "liquid-glass border border-white/10"
+      : "bg-transparent"
+  )}
+>
+  <Logo className="h-7 md:h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
+</Link>
 
         {/* Desktop Nav */}
         <div
@@ -65,15 +65,15 @@ export const Navbar = () => {
               </Link>
             ))}
           </div>
-          <a
-            href="#book"
-            className="bg-gold text-black font-bold text-[13px] px-5 py-2.5 rounded-full flex items-center gap-1.5 hover:bg-gold/90 transition-all active:scale-95"
-          >
-            Book a Call <ArrowUpRight className="w-3.5 h-3.5" />
-          </a>
+         <Link
+  to="/contact"
+  className="bg-gold text-black font-bold text-[13px] px-5 py-2.5 rounded-full flex items-center gap-1.5 hover:bg-gold/90 transition-all active:scale-95"
+>
+  Book a Call <ArrowUpRight className="w-3.5 h-3.5" />
+</Link>
         </div>
 
-        {/* Mobile Toggle - Only position fixed, shape unchanged */}
+        {/* Mobile Toggle */}
         <div className="md:hidden flex items-center gap-4">
           <a
             href="#book"
@@ -81,15 +81,16 @@ export const Navbar = () => {
           >
             Book <ArrowUpRight className="w-3 h-3" />
           </a>
-          <button
-            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="p-2 text-white hover:text-gold transition-colors"
-          >
-            {isMobileMenuOpen ? (
-              <X className="w-6 h-6" />
-            ) : (
-              <Menu className="w-6 h-6" />
-            )}
+        <button
+  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+  className="p-2 text-white hover:text-gold transition-colors"
+>
+  {isMobileMenuOpen ? (
+    <X className="w-6 h-6" />
+  ) : (
+    <Menu className="w-6 h-6" />
+  )}
+ 
           </button>
         </div>
       </nav>

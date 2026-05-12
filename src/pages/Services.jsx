@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'motion/react';
+import { Link } from 'react-router-dom';
 import { Target, Mail, Calendar, BarChart3, Zap, ShieldCheck, ArrowUpRight, CheckCircle2, Users, Code2, ChevronLeft, ChevronRight, Quote } from 'lucide-react';
 import { cn } from '../lib/utils';
 
@@ -21,9 +22,9 @@ const ServiceCard = ({ icon, title, desc, features }) => (
         </li>
       ))}
     </ul>
-    <a href="#book" className="liquid-glass-gold px-6 py-3 rounded-full text-gold text-[13px] font-bold inline-flex items-center gap-2 hover:scale-105 transition-all w-fit">
+    <Link to="/contact" className="liquid-glass-gold px-6 py-3 rounded-full text-gold text-[13px] font-bold inline-flex items-center gap-2 hover:scale-105 transition-all w-fit">
       Get Started <ArrowUpRight className="w-3.5 h-3.5" />
-    </a>
+    </Link>
   </motion.div>
 );
 
@@ -33,25 +34,40 @@ const TestimonialCarousel = () => {
   const testimonials = [
     {
       quote: "vConnect IQ completely transformed our outbound motion. We went from struggling to get meetings to a predictable pipeline of enterprise opportunities.",
-      author: "Rajesh Kumar",
+      author: "Priyadarshi Ghosh",
       role: "VP of Sales",
       company: "TechFlow Solutions",
       logo: "https://picsum.photos/seed/techflow/120/40"
     },
     {
       quote: "Their understanding of the US IT services market is unmatched. They don't just book meetings; they book the right meetings with decision-makers.",
-      author: "Sarah Jenkins",
+      author: "Balavishnu",
       role: "Chief Revenue Officer",
       company: "CloudScale Inc.",
       logo: "https://picsum.photos/seed/cloudscale/120/40"
     },
     {
       quote: "The embedded team approach works flawlessly. It feels like they are sitting right next to us. The quality of BANT-qualified leads has been exceptional.",
-      author: "Amit Patel",
+      author: "Palani Stratworks",
+      role: "CEO",
+      company: "Innovate IT",
+      logo: "https://picsum.photos/seed/innovate/120/40"
+    },
+     {
+      quote: "The embedded team approach works flawlessly. It feels like they are sitting right next to us. The quality of BANT-qualified leads has been exceptional.",
+      author: "Ankit Shah",
+      role: "CEO",
+      company: "Innovate IT",
+      logo: "https://picsum.photos/seed/innovate/120/40"
+    },
+     {
+      quote: "The embedded team approach works flawlessly. It feels like they are sitting right next to us. The quality of BANT-qualified leads has been exceptional.",
+      author: "Maitray Trivedi",
       role: "CEO",
       company: "Innovate IT",
       logo: "https://picsum.photos/seed/innovate/120/40"
     }
+
   ];
 
   useEffect(() => {
@@ -140,8 +156,7 @@ export const Services = () => {
     }
   ];
 
-
-return (
+  return (
     <div className="pt-20 md:pt-24 lg:pt-32">
       <section className="py-12 md:py-16 lg:py-24 px-4 md:px-6">
         <div className="max-w-6xl mx-auto">
@@ -168,7 +183,7 @@ return (
 
       <section className="py-24 px-6 bg-black/40 backdrop-blur-sm border-y border-white/5">
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="heading-italic text-4xl md:text-6xl mb-8">Not another cold-email tool.</h2>
+          <h2 className="heading-italic text-4xl md:text-6xl mb-8">No Another Agency</h2>
           <p className="text-white/50 text-lg font-light leading-relaxed mb-12">
             vConnect IQ is your extended B2B sales team. We sit inside your process, use your tools (or ours), and represent your brand with the same level of expertise as your top performers.
           </p>

@@ -18,7 +18,8 @@ import {
   Instagram,
 } from "lucide-react";
 import { cn } from "../lib/utils";
-
+import { Link } from 'react-router-dom';
+import ElephantBg from '../assets/Images/Elephant-bg.jpeg';
 export const AnimatedCounter = ({ value }) => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-50px" });
@@ -65,7 +66,7 @@ export const AnimatedCounter = ({ value }) => {
 export const Hero = () => {
   const { scrollY } = useScroll();
   const opacity = useTransform(scrollY, [0, 600], [1, 0]);
-  const yParallax = useTransform(scrollY, [0, 1000], [0, 300]);
+  const yParallax = useTransform(scrollY, [0, 1000], [0, 150]);
 
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -93,71 +94,95 @@ export const Hero = () => {
   }, [mouseX, mouseY, isHovered]);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center pt-32 pb-20 px-6 overflow-hidden bg-black">
-      {/* Interactive Background */}
-      <motion.div
-        style={{ opacity, y: yParallax }}
-        className="absolute inset-0 z-0 pointer-events-none"
-      >
+ <section className="relative min-h-screen flex flex-col items-center justify-center pt-0 sm:pt-8 md:pt-10 pb-20 px-4 sm:px-6 overflow-hidden bg-black">
+      {/* Background Image Container - Fixed to stay behind */}
+      <div className="absolute inset-0 z-0">
+        {/* Mouse move effect container */}
         <motion.div
           style={{ x: springX, y: springY }}
-          className="absolute inset-[-5%] w-[110%] h-[110%]"
+          className="absolute inset-0 w-full h-full"
         >
-          <motion.img
-            src="https://images.unsplash.com/photo-1557050543-4d5f4e07ef46?q=80&w=3270&auto=format&fit=crop"
-            alt="Majestic Elephant"
-            className="w-full h-full object-cover"
-            initial={false}
-            animate={{
-              filter: isHovered
-                ? "grayscale(20%) sepia(60%) hue-rotate(5deg) saturate(180%) brightness(0.8)"
-                : "grayscale(100%) sepia(0%) hue-rotate(0deg) saturate(100%) brightness(0.5)",
-              scale: isHovered ? 1.02 : 1,
-            }}
-            transition={{ duration: 1.5, ease: "easeOut" }}
-          />
+  <img
+  src={ElephantBg}
+  alt="Majestic Elephant"
+  className="
+  w-full
+  h-[42vh]
+  sm:h-[55vh]
+  md:h-full
+  object-cover
+  object-center
+  object-[center_20%]
+  md:object-center
+"
+  style={{
+    filter: isHovered
+      ? "grayscale(20%) sepia(60%) hue-rotate(5deg) saturate(180%) brightness(0.8)"
+      : "grayscale(100%) sepia(0%) hue-rotate(0deg) saturate(100%) brightness(0.45)",
+    transform: isHovered ? "scale(1.03)" : "scale(1.08)",
+    transition: "all 1.5s ease-out",
+  }}
+/>
         </motion.div>
-        {/* Overlays for text readability */}
+        
+        {/* Overlays for text readability - These stay on top of image */}
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,black_100%)] opacity-70" />
-      </motion.div>
+      </div>
 
-      <motion.div
-        style={{ y: useTransform(scrollY, [0, 1000], [0, 150]), opacity }}
-        className="max-w-4xl mx-auto text-center relative z-10"
-      >
+      {/* Content Container - Stays on top of background */}
+     <motion.div
+  style={{ y: yParallax, opacity }}
+ className="max-w-4xl mx-auto text-center relative z-10 w-full -mt-16 sm:-mt-10 md:mt-12 lg:mt-16"
+>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="inline-flex items-center gap-1.5 p-0.5 pr-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-8"
+          className="inline-flex items-center gap-1.5 p-0.5 pr-3 rounded-full border border-white/10 bg-white/5 backdrop-blur-md mb-6 md:mb-8 mx-auto"
         >
-          <span className="bg-gold text-black text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">
+          <span className="bg-gold text-black text-[9px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider whitespace-nowrap">
             6 Years · 500+ Clients
           </span>
-          <span className="text-[10px] text-white/70">
+          <span className="text-[10px] text-white/70 whitespace-nowrap hidden sm:inline">
             Extended Sales Team for Indian IT
           </span>
+          <span className="text-[10px] text-white/70 whitespace-nowrap sm:hidden">
+            Extended Sales Team
+          </span>
         </motion.div>
+        
         <motion.h1
-          initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
-          animate={{ opacity: 1, filter: "blur(0)", y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="heading-italic text-3xl sm:text-4xl md:text-7xl lg:text-9xl mb-6 text-center leading-[1.1]"
-        >
+  initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
+  animate={{ opacity: 1, filter: "blur(0)", y: 0 }}
+  transition={{ duration: 0.8 }}
+  className="
+    heading-italic
+    text-[2.4rem]
+    sm:text-6xl
+    md:text-7xl
+    lg:text-8xl
+    xl:text-9xl
+    mb-4
+    md:mb-6
+    text-center
+    leading-[1.05]
+    w-full
+    flex
+    justify-center
+  "
+>
           <div className="flex flex-col items-center justify-center">
-            <span className="whitespace-normal">Own Your Market.</span>
-            <span className="text-gold whitespace-normal">
-              Or Someone <br className="block md:hidden" />
-              Else Will.
-            </span>
+            <span>Own Your Market.</span>
+            <span className="text-gold">Or Someone Else Will.</span>
           </div>
         </motion.h1>
+        
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="max-w-xl mx-auto text-base md:text-lg text-white/50 mb-10 font-light leading-relaxed"
+          className="max-w-xl mx-auto text-sm sm:text-base md:text-lg text-white/50 mb-8 md:mb-10 font-light leading-relaxed px-4"
         >
           <span className="text-white/80 font-medium">
             The memory of an elephant. The momentum of a powerhouse.
@@ -168,35 +193,36 @@ export const Hero = () => {
           you feel busy. We're your extended B2B sales team — built exclusively
           for Indian IT companies ready to stop chasing and start closing.
         </motion.p>
+        
         <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="flex flex-wrap items-center justify-center gap-4"
-        >
-          <a
-            href="#book"
-            className="liquid-glass-gold px-8 py-4 rounded-full text-gold font-bold flex items-center gap-2 hover:scale-105 transition-all"
-          >
-            Book a Strategy Call <ArrowUpRight className="w-4 h-4" />
-          </a>
-          <a
-            href="#results"
-            className="px-8 py-4 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all"
-          >
-            See Our Results →
-          </a>
-        </motion.div>
+  initial={{ opacity: 0, y: 20 }}
+  animate={{ opacity: 1, y: 0 }}
+  transition={{ duration: 0.8, delay: 0.4 }}
+  className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
+>
+  <Link
+    to="/contact"
+    className="liquid-glass-gold px-6 md:px-8 py-3 md:py-4 rounded-full text-gold font-bold text-sm md:text-base flex items-center gap-2 hover:scale-105 transition-all"
+  >
+    Book a Strategy Call <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+  </Link>
+  <Link
+    to="/contact"
+    className="px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
+  >
+    See Our Results →
+  </Link>
+</motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
-          className="mt-20 flex flex-col items-center gap-6"
+          className="mt-16 md:mt-20 flex flex-col items-center gap-4 md:gap-6"
         >
-          <p className="text-[11px] uppercase tracking-[0.2em] text-white/30 font-semibold">
+          <p className="text-[10px] md:text-[11px] uppercase tracking-[0.2em] text-white/30 font-semibold">
             Trusted by IT companies across India
           </p>
-          <div className="flex flex-wrap justify-center gap-x-12 gap-y-6">
+          <div className="flex flex-wrap justify-center gap-x-6 md:gap-x-12 gap-y-4 md:gap-y-6">
             {[
               "Infovision",
               "NexGen IT",
@@ -206,7 +232,7 @@ export const Hero = () => {
             ].map((logo) => (
               <span
                 key={logo}
-                className="heading-italic text-xl text-white/20 hover:text-white/50 transition-colors cursor-default"
+                className="heading-italic text-base sm:text-lg md:text-xl text-white/20 hover:text-white/50 transition-colors cursor-default"
               >
                 {logo}
               </span>
@@ -217,7 +243,6 @@ export const Hero = () => {
     </section>
   );
 };
-
 export const Journey = () => {
   const containerRef = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -240,7 +265,7 @@ export const Journey = () => {
     },
     {
       date: "Today",
-      desc: "Profitable, 400+ clients served, full-service GTM partner",
+      desc: "Profitable, 500+ clients served, full-service GTM partner",
     },
   ];
 
@@ -342,20 +367,23 @@ export const Marquee = () => {
     "Qualified Meetings",
     "IT Sector Expertise",
   ];
+  
   return (
     <div className="py-10 border-y border-white/5 overflow-hidden relative bg-black/40 backdrop-blur-sm">
-      <div className="flex gap-16 animate-marquee whitespace-nowrap">
-        {[...items, ...items].map((item, i) => (
-          <div key={i} className="flex items-center gap-16">
-            <span className="heading-italic text-2xl text-white/20 hover:text-white/60 transition-colors cursor-default">
-              {item}
-            </span>
-            <span className="text-gold opacity-40">✦</span>
-          </div>
-        ))}
+      <div className="flex overflow-hidden relative w-full">
+        <div className="flex gap-16 animate-marquee shrink-0">
+          {[...items, ...items].map((item, i) => (
+            <div key={i} className="flex items-center gap-16 shrink-0">
+              <span className="heading-italic text-2xl text-white/20 hover:text-white/60 transition-colors cursor-default whitespace-nowrap">
+                {item}
+              </span>
+              <span className="text-gold opacity-40 shrink-0">✦</span>
+            </div>
+          ))}
+        </div>
       </div>
-      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10" />
-      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10" />
+      <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+      <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
     </div>
   );
 };
@@ -691,7 +719,6 @@ export const FAQ = () => {
 //     </section>
 //   );
 // };
-
 export const CTA = () => {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
@@ -704,7 +731,7 @@ export const CTA = () => {
     <section
       ref={ref}
       id="book"
-     className="relative py-12 md:py-20 lg:py-32 px-4 md:px-6 overflow-hidden text-center bg-black/60"
+      className="relative py-12 md:py-20 lg:py-32 px-4 md:px-6 overflow-hidden text-center bg-black/60"
     >
       <motion.div
         style={{ y }}
@@ -713,7 +740,6 @@ export const CTA = () => {
       
       {/* Reduced top gradient height on mobile */}
       <div className="absolute top-0 left-0 right-0 h-16 md:h-32 lg:h-40 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-      {/* <div className="absolute bottom-0 left-0 right-0 h-16 md:h-32 bg-gradient-to-t from-black to-transparent z-10 pointer-events-none" /> */}
       
       <div className="max-w-3xl mx-auto relative z-20">
         <span className="inline-block px-3 md:px-4 py-1 rounded-full liquid-glass text-gold text-[10px] md:text-[11px] font-bold uppercase tracking-wider mb-4 md:mb-6 lg:mb-8">
@@ -731,19 +757,20 @@ export const CTA = () => {
           and what's actually blocking your pipeline. No pitch decks. No fluff.
         </p>
         
+        {/* FIXED: Changed from <a> to <Link> for both buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-          <a
-            href="#"
+          <Link
+            to="/contact"
             className="bg-gold text-black px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full text-sm md:text-base font-bold hover:bg-gold/90 transition-all active:scale-95 shadow-xl shadow-gold/20"
           >
             Book a Strategy Call ↗
-          </a>
-          <a
-            href="#results"
+          </Link>
+          <Link
+            to=""
             className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
           >
             See Our Results →
-          </a>
+          </Link>
         </div>
         
         <p className="text-[10px] md:text-[11px] text-white/20 uppercase tracking-widest font-semibold">

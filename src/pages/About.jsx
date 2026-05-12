@@ -182,7 +182,7 @@ export const About = () => {
               </p>
               <p className="text-sm md:text-base text-white/40 font-light leading-relaxed mb-8 md:mb-10">
                 Today, we are a team of senior practitioners who don't just "run
-                campaigns"—we build revenue engines. We've served over 400
+                campaigns"—we build revenue engines. We've served over 500
                 clients, from ₹5Cr startups to ₹500Cr enterprise services firms,
                 helping them own their market before someone else does.
               </p>
@@ -242,14 +242,16 @@ export const About = () => {
               <h2 className="heading-italic text-2xl md:text-3xl lg:text-5xl mb-3 md:mb-4 lg:mb-6">
                 Why the Elephant?
               </h2>
-              <p className="text-white/70 max-w-2xl mx-auto font-light leading-relaxed text-sm md:text-base lg:text-lg px-4">
-                In the wild, the elephant represents unmatched intelligence,
-                deep memory, and unstoppable momentum. In B2B sales, it
-                represents us. We don't forget a lead. We don't drop the ball.
-                We carry the heavy lifting of your pipeline generation so you
-                can focus on what you do best: closing.
-              </p>
-            </div>
+
+                <p className="text-white/70 max-w-2xl mx-auto font-light leading-relaxed text-sm md:text-base lg:text-lg px-4">
+  In the wild, the elephant represents unmatched intelligence,
+  deep memory, and unstoppable momentum. In B2B sales, it
+  represents us. We don't forget a lead. We don't drop the ball.
+  We carry the heavy lifting of your pipeline generation so you
+  can focus on what you do best:{" "}
+  <span className="text-gold font-medium">closing.</span>
+</p>
+  </div>
           </div>
           
           <div className="pt-16 md:pt-20 lg:pt-24 border-t border-white/5">

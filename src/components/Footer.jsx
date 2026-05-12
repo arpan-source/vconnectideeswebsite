@@ -16,18 +16,49 @@ export const Footer = () => {
           </p>
         </div>
         
-        <div>
-          <h4 className="text-[11px] font-bold uppercase tracking-widest text-white/80 mb-6">Links</h4>
-          <ul className="space-y-4">
-            {['Services', 'Process', 'Results', 'FAQs'].map(item => (
-              <li key={item}>
-                <Link to={`/${item.toLowerCase()}`} className="text-[13px] text-white/40 hover:text-gold transition-colors">
-                  {item}
-                </Link>
-              </li>
-            ))}
-          </ul>
-        </div>
+      <div>
+  <h4 className="text-[11px] font-bold uppercase tracking-widest text-white/80 mb-6">
+    Links
+  </h4>
+
+  <ul className="space-y-4">
+    <li>
+      <Link
+        to="/services"
+        className="text-[13px] text-white/40 hover:text-gold transition-colors"
+      >
+        Services
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        to="/process"
+        className="text-[13px] text-white/40 hover:text-gold transition-colors"
+      >
+        Process
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        to="/#results"
+        className="text-[13px] text-white/40 hover:text-gold transition-colors"
+      >
+        Results
+      </Link>
+    </li>
+
+    <li>
+      <Link
+        to="/#faq"
+        className="text-[13px] text-white/40 hover:text-gold transition-colors"
+      >
+        FAQs
+      </Link>
+    </li>
+  </ul>
+</div>
 
         <div>
           <h4 className="text-[11px] font-bold uppercase tracking-widest text-white/80 mb-6">Pages</h4>

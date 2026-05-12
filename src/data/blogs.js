@@ -1,3 +1,5 @@
+import MuskanMam from "../assets/images/MuskanMam.png";
+import BlogsBackground from "../assets/Images/blogsbackground.jpeg";
 export const BLOG_POSTS = [
 //   {
 //     id: "b2b-cold-email-deliverability-guide-2026",
@@ -103,7 +105,7 @@ export const BLOG_POSTS = [
 
 // **Randomized send windows:** Don't fire 50 emails at exactly 9:00 AM. Use tools that randomize send intervals (e.g., send 1 email every 4–9 minutes, not every 2 minutes on the dot). Burst sending patterns are a spam classifier trigger.
 
-// **Sequence step caps:** For a 5-step sequence, don't front-load volume in Steps 1–2. Spread it. A step 1 with 400 contacts and Step 2 with 380 is a normal drop-off. Step 1 with 400 and Step 3 with 350 but all fired within 48 hours is a pressure pattern that algorithms detect.
+// **Sequence step caps:** For a 5-step sequence, don't front-load volume in Steps 1–2. Spread it. A step 1 with 500 contacts and Step 2 with 380 is a normal drop-off. Step 1 with 500 and Step 3 with 350 but all fired within 48 hours is a pressure pattern that algorithms detect.
 
 // **Reply detection and removal:** The moment someone replies — positive, negative, out of office — they should exit the sequence automatically. Continuing to send after a reply is both a deliverability signal and a compliance risk.
 
@@ -202,18 +204,18 @@ export const BLOG_POSTS = [
 //     content: "Coming soon..."
 //   },
   {
-    id: "why-cold-emails-not-getting-replies",
-    slug: "why-cold-emails-not-getting-replies",
-    title: "Cold Emails Not Getting Replies? Here's Exactly What's Breaking Your Campaign",
-    excerpt: "Cold emails not getting replies? Learn the exact reasons your outreach falls flat and get a step-by-step fix — from deliverability to copy that converts.",
-    date: "May 11, 2026",
-    author: {
-      name: "Muskan Nigam",
-      role: "Growth Marketing Manager",
-      avatar: "https://picsum.photos/seed/muskan/150/150"
-    },
+  id: "why-cold-emails-not-getting-replies",
+  slug: "why-cold-emails-not-getting-replies",
+  title: "Cold Emails Not Getting Replies? Here's Exactly What's Breaking Your Campaign",
+  excerpt: "Cold emails not getting replies? Learn the exact reasons your outreach falls flat and get a step-by-step fix — from deliverability to copy that converts.",
+  date: "May 11, 2026",
+  author: {
+    name: "Muskan Nigam",
+    role: "Growth Marketing Manager",
+    avatar: MuskanMam
+  },
     category: "Cold Outreach",
-    image: "https://images.unsplash.com/photo-1516321497487-e288fb19713f?q=80&w=2940&auto=format&fit=crop",
+   image: BlogsBackground,
     metaTitle: "Why Cold Emails Fail — And How to Fix Them Fast",
     metaDescription: "Cold emails not getting replies? Learn the exact reasons your outreach falls flat and get a step-by-step fix — from deliverability to copy that converts.",
     content: `
