@@ -1,4 +1,4 @@
-import MuskanMam from "../assets/images/MuskanMam.png";
+import MuskanMam from "../assets/Images/MuskanMam.png";
 import BlogsBackground from "../assets/Images/blogsbackground.jpeg";
 export const BLOG_POSTS = [
 //   {
