@@ -98,34 +98,34 @@ export const Hero = () => {
       {/* Background Image Container - Fixed to stay behind */}
       <div className="absolute inset-0 z-0">
         {/* Mouse move effect container */}
-        <motion.div
-          style={{ x: springX, y: springY }}
-            className="absolute inset-0 w-full h-full top-8 sm:top-10 md:top-12"
-  >
+      <motion.div
+  style={{
+    x: springX,
+    y: springY,
+    top: 'clamp(40px, 10vh, 0px)'
+  }}
+  className="absolute inset-0 w-full h-full"
+>
   <img
   src={ElephantBg}
   alt="Majestic Elephant"
   className="
-  w-full
-  h-[42vh]
-  sm:h-[55vh]
-  md:h-full
-  object-cover
-  object-center
-  object-center
-"
+    w-full
+    h-[42vh]
+    sm:h-[55vh]
+    md:h-full
+    object-cover
+    object-center
+  "
   style={{
-    objectPosition: 'center',
-  }}
-  style={{
+    objectPosition: "center",
     filter: isHovered
       ? "grayscale(20%) sepia(60%) hue-rotate(5deg) saturate(180%) brightness(0.8)"
       : "grayscale(100%) sepia(0%) hue-rotate(0deg) saturate(100%) brightness(0.45)",
     transform: isHovered ? "scale(1.03)" : "scale(1.08)",
     transition: "all 1.5s ease-out",
   }}
-/>
-        </motion.div>
+/>       </motion.div>
         
         {/* Overlays for text readability - These stay on top of image */}
         <div className="absolute inset-0 bg-black/30" />
@@ -760,21 +760,20 @@ export const CTA = () => {
         </p>
         
         {/* FIXED: Changed from <a> to <Link> for both buttons */}
-        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-          <Link
-            to="/contact"
-            className="bg-gold text-black px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full text-sm md:text-base font-bold hover:bg-gold/90 transition-all active:scale-95 shadow-xl shadow-gold/20"
-          >
-            Book a Strategy Call ↗
-          </Link>
-          <Link
-            to=""
-            className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
-          >
-            See Our Results →
-          </Link>
-        </div>
-        
+      <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
+  <Link
+    to="/contact"
+    className="bg-gold text-black px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full text-sm md:text-base font-bold hover:bg-gold/90 transition-all active:scale-95 shadow-xl shadow-gold/20"
+  >
+    Book a Strategy Call ↗
+  </Link>
+  <a
+    href="#results"
+    className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
+  >
+    See Our Results →
+  </a>
+</div>
         <p className="text-[10px] md:text-[11px] text-white/20 uppercase tracking-widest font-semibold">
           No credit card. No commitment. Just a conversation.
         </p>

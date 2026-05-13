@@ -253,17 +253,17 @@ export const BlogPost = () => {
           className="mt-20 pt-10 border-t border-white/5"
         >
           <div className="bg-white/5 border border-white/10 rounded-2xl p-8 md:p-12 text-center flex flex-col items-center">
-            <h3 className="text-2xl mb-4">Want a deliverability audit for your current sending setup?</h3>
-            <p className="text-white/50 mb-8 max-w-lg">
-              Get an expert analysis of your cold email infrastructure and stay out of the spam folder.
-            </p>
-            <a 
-              href="#book"
-              className="bg-gold text-black font-bold text-sm px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gold/90 transition-all"
-            >
-              Book an Audit <ArrowUpRight className="w-4 h-4" />
-            </a>
-          </div>
+  <h3 className="text-2xl mb-4">Want a deliverability audit for your current sending setup?</h3>
+  <p className="text-white/50 mb-8 max-w-lg">
+    Get an expert analysis of your cold email infrastructure and stay out of the spam folder.
+  </p>
+  <Link 
+    to="/contact"
+    className="bg-gold text-black font-bold text-sm px-6 py-3 rounded-full flex items-center gap-2 hover:bg-gold/90 transition-all"
+  >
+    Book an Audit <ArrowUpRight className="w-4 h-4" />
+  </Link>
+</div>
         </motion.div>
       </div>
     </article>

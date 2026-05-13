@@ -41,22 +41,16 @@ export const Footer = () => {
     </li>
 
     <li>
-      <Link
-        to="/#results"
-        className="text-[13px] text-white/40 hover:text-gold transition-colors"
-      >
-        Results
-      </Link>
-    </li>
+  <a href="#results" className="text-[13px] text-white/40 hover:text-gold transition-colors">
+    Results
+  </a>
+</li>
 
-    <li>
-      <Link
-        to="/#faq"
-        className="text-[13px] text-white/40 hover:text-gold transition-colors"
-      >
-        FAQs
-      </Link>
-    </li>
+<li>
+  <a href="#faq" className="text-[13px] text-white/40 hover:text-gold transition-colors">
+    FAQs
+  </a>
+</li>
   </ul>
 </div>
 

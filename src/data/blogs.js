@@ -342,25 +342,32 @@ At **vConnect IQ**, we help growth teams and B2B marketers build outreach strate
 
 ---
 
+---
+
 ### FAQ
 
 **Q: Why are my cold emails going to spam?**
+
 A: Cold emails typically land in spam due to misconfigured technical records (SPF, DKIM, DMARC), a high bounce rate from unverified lists, or sending from a domain with no warmup history. Run a deliverability audit using tools like MXToolbox before blaming your content.
 
 **Q: What is a good reply rate for cold emails?**
+
 A: A healthy cold email reply rate is generally 3–5%. If you're getting below 1%, the issue is usually the copy structure, the targeting quality, or both. Open rates between 20–30% indicate healthy deliverability.
 
 **Q: How many follow-up emails should I send in a cold outreach sequence?**
+
 A: Three to four follow-up emails spread across two to three weeks is a proven standard. Each email should introduce new value — a relevant insight, resource, or angle — rather than simply re-asking the same question.
 
 **Q: How do I improve my cold email open rate?**
+
 A: Start by verifying your technical setup (SPF, DKIM, DMARC), then clean your list with a verification tool. Once deliverability is confirmed, test subject line variations — short vs. long, questions vs. statements, personalized vs. general — using batches of 200+ emails per variant.
 
 **Q: Why is no one replying to my cold emails even though they're being opened?**
+
 A: Low reply rates on decent open rates almost always indicate a copy problem. The most common culprits are company-first openers ("We help businesses…"), feature-heavy messaging instead of problem-focused framing, and high-pressure asks like 30-minute meetings in the first email.
 
 **Q: How do I build a clean cold email list?**
-A: Use list verification tools like ZeroBounce or NeverBounce to remove invalid addresses, dead inboxes, and role-based accounts (info@, support@). Also filter out anyone who has previously unsubscribed or submitted a spam complaint.
-`
+
+A: Use list verification tools like ZeroBounce or NeverBounce to remove invalid addresses, dead inboxes, and role-based accounts (info@, support@). Also filter out anyone who has previously unsubscribed or submitted a spam complaint.`
   }
 ];

@@ -73,26 +73,31 @@ export const Navbar = () => {
 </Link>
         </div>
 
-        {/* Mobile Toggle */}
-        <div className="md:hidden flex items-center gap-4">
-          <a
-            href="#book"
-            className="bg-gold text-black font-bold text-[11px] px-4 py-2 rounded-full flex items-center gap-1 hover:bg-gold/90 transition-all"
-          >
-            Book <ArrowUpRight className="w-3 h-3" />
-          </a>
-        <button
-  onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-  className="p-2 text-white hover:text-gold transition-colors"
->
-  {isMobileMenuOpen ? (
-    <X className="w-6 h-6" />
-  ) : (
-    <Menu className="w-6 h-6" />
-  )}
- 
-          </button>
-        </div>
+       {/* Mobile Toggle */}
+<div className="md:hidden flex items-center gap-3">
+  <Link
+    to="/contact"
+    className="bg-gold text-black font-bold rounded-full flex items-center gap-1 hover:bg-gold/90 transition-all"
+    style={{
+      fontSize: '10px',
+      padding: '4px 10px',
+      minWidth: '48px',
+      height: '28px',
+    }}
+  >
+    Book <ArrowUpRight className="w-2.5 h-2.5" />
+  </Link>
+  <button
+    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+    className="p-1 text-white hover:text-gold transition-colors"
+  >
+    {isMobileMenuOpen ? (
+      <X className="w-5 h-5" />
+    ) : (
+      <Menu className="w-5 h-5" />
+    )}
+  </button>
+</div>
       </nav>
 
       {/* Mobile Menu Overlay */}
