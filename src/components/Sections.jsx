@@ -752,19 +752,49 @@ export const CTA = () => {
 
         {/* FIXED: Changed from <a> to <Link> for both buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-          <Link
-            to="/contact"
-            className="bg-gold text-black px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full text-sm md:text-base font-bold hover:bg-gold/90 transition-all active:scale-95 shadow-xl shadow-gold/20"
-          >
-            Book a Strategy Call ↗
-          </Link>
-          <a
-            href="#results"
-            className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
-          >
-            See Our Results →
-          </a>
-        </div>
+  
+  <Link
+    to="/contact"
+    className="
+      flex items-center justify-center
+      bg-gold text-black
+      px-6 md:px-8 lg:px-10
+      h-[48px] md:h-auto
+      md:py-4 lg:py-5
+      rounded-full
+      text-sm md:text-base
+      font-bold
+      leading-none
+      hover:bg-gold/90
+      transition-all
+      active:scale-95
+      shadow-xl shadow-gold/20
+    "
+  >
+    Book a Strategy Call ↗
+  </Link>
+
+  <a
+    href="#results"
+    className="
+      flex items-center justify-center
+      px-6 md:px-8 lg:px-10
+      h-[48px] md:h-auto
+      md:py-4 lg:py-5
+      rounded-full
+      border border-white/10
+      text-white/70
+      font-medium
+      text-sm md:text-base
+      leading-none
+      hover:bg-white/5
+      transition-all
+    "
+  >
+    See Our Results →
+  </a>
+
+</div>
         <p className="text-[10px] md:text-[11px] text-white/20 uppercase tracking-widest font-semibold">
           No credit card. No commitment. Just a conversation.
         </p>
