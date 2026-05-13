@@ -39,8 +39,8 @@ export const Navbar = () => {
       : "bg-transparent"
   )}
 >
-  <Logo className="h-2 md:h-6 max-w-[80px] md:max-w-none object-contain group-hover:scale-105 transition-transform duration-300" />
-</Link>
+<Logo className="h-8 sm:h-10 md:h-12 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
+       </Link>
         {/* Desktop Nav */}
         <div
           className={cn(
