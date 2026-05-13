@@ -39,7 +39,7 @@ export const Navbar = () => {
       : "bg-transparent"
   )}
 >
-  <Logo className="h-2 md:h-6 max-w-[80px] md:max-w-none object-contain group-hover:scale-105 transition-transform duration-300" />
+ <Logo className="!h-[38px] !w-auto md:!h-8 object-contain group-hover:scale-105 transition-transform duration-300" />
 </Link>
         {/* Desktop Nav */}
         <div
@@ -74,18 +74,23 @@ export const Navbar = () => {
 
        {/* Mobile Toggle */}
 <div className="md:hidden flex items-center gap-3">
-  <Link
-    to="/contact"
-    className="bg-gold text-black font-bold rounded-full flex items-center gap-1 hover:bg-gold/90 transition-all"
-    style={{
-      fontSize: '9px',
-      padding: '3px 8px',
-      minWidth: '42px',
-      height: '24px',
-    }}
-  >
-    Book <ArrowUpRight className="w-2.5 h-2.5" />
-  </Link>
+ <Link
+  to="/contact"
+  className="
+    bg-gold text-black font-bold rounded-full
+    flex items-center justify-center gap-1
+    text-[12px]
+    px-2 py-1
+    min-w-[84px]
+    h-[18px]
+    hover:bg-gold/90
+    transition-all
+    shrink-0
+  "
+>
+  Book
+  <ArrowUpRight className="w-4 h-4 shrink-0" />
+</Link>
   <button
     onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
     className="p-1 text-white hover:text-gold transition-colors"
