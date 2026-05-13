@@ -208,12 +208,12 @@ export const Hero = () => {
   >
     Book a Strategy Call <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
   </Link>
-  <Link
-    to="/contact"
-    className="px-6 md:px-8 py-3 md:py-4 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
-  >
-    See Our Results →
-  </Link>
+ <a
+  href="#results"
+  className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
+>
+  See Our Results →
+</a>
 </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
