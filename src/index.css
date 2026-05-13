@@ -206,7 +206,7 @@
   }
   
   /* Make badges smaller */
-  .rounded-full .text: 11px {
+.rounded-full {
   font-size: 9px !important;
   padding: 0.25rem 0.5rem !important;
 }
@@ -243,11 +243,9 @@
   }
   
  /* Reduce badge text */
-span.text: 10px,
-span.text: 11px {
+span {
   font-size: 8px !important;
-}
-  
+}  
   /* Minimal padding for containers */
   .max-w-4xl,
   .max-w-5xl,
