@@ -9,10 +9,10 @@ const ProcessStep = ({ number, title, desc, icon, details }) => (
     <div className="grid lg:grid-cols-2 gap-6 md:gap-8 lg:gap-12 items-start">
       <div>
         {/* Number and Title on the same line - Side by side */}
-        <div className="flex items-center gap-4 md:gap-6 mb-4 md:mb-6">
-          <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 md:gap-3 mb-4 md:mb-6">
+          <div className="flex items-center gap-4">
             <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full liquid-glass flex items-center justify-center">
-              <span className="heading-italic text-lg sm:text-xl text-gold/40 group-hover:text-gold transition-colors">
+             <span className="heading-italic !text-[15px] sm:!text-[14px] text-gold/40 group-hover:text-gold transition-colors">
                 {number}
               </span>
             </div>

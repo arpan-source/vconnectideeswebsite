@@ -108,13 +108,13 @@ export const Footer = () => {
       </div>
       
       <div className="max-w-6xl mx-auto pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4 text-center">
-        <p className="text-[11px] text-white/20 uppercase tracking-widest font-semibold">© 2025 vConnect IQ. All rights reserved.</p>
+        <p className="text-[11px] text-white/20 uppercase tracking-widest font-semibold">© 2026 vConnect IQ. All rights reserved.</p>
         <div className="flex gap-8">
-          {['Privacy Policy', 'Terms of Service'].map(link => (
+          {/* {['Privacy Policy', 'Terms of Service'].map(link => (
             <a key={link} href="#" className="text-[11px] text-white/20 hover:text-white/40 transition-colors uppercase tracking-widest font-semibold">
               {link}
             </a>
-          ))}
+          ))} */}
         </div>
       </div>
     </footer>

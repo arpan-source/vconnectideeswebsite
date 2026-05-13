@@ -94,39 +94,31 @@ export const Hero = () => {
   }, [mouseX, mouseY, isHovered]);
 
   return (
- <section className="relative min-h-[115vh] md:min-h-screen flex flex-col items-center justify-center pt-6 sm:pt-8 md:pt-10 pb-20 px-4 sm:px-6 overflow-hidden bg-black">
+    <section className="relative min-h-screen flex  flex-col items-center justify-center pt-6 sm:pt-8 md:pt-10 pb-20 px-4 sm:px-6 overflow-hidden bg-black">
       {/* Background Image Container - Fixed to stay behind */}
       <div className="absolute inset-0 z-0">
         {/* Mouse move effect container */}
-      <motion.div
+       <motion.div
   style={{
     x: springX,
     y: springY,
-    top: 'clamp(40px, 10vh, 0px)'
   }}
-  className="absolute inset-0 w-full h-full"
+  className="absolute left-0 right-0 top-20 md:top-0 w-[110%] h-[110%]"
 >
-  <img
-  src={ElephantBg}
-  alt="Majestic Elephant"
-  className="
-    w-full
-    h-[42vh]
-    sm:h-[55vh]
-    md:h-full
-    object-cover
-    object-center
-  "
-  style={{
-    objectPosition: "center",
-    filter: isHovered
-      ? "grayscale(20%) sepia(60%) hue-rotate(5deg) saturate(180%) brightness(0.8)"
-      : "grayscale(100%) sepia(0%) hue-rotate(0deg) saturate(100%) brightness(0.45)",
-    transform: isHovered ? "scale(1.03)" : "scale(1.08)",
-    transition: "all 1.5s ease-out",
-  }}
-/>       </motion.div>
-        
+          <img
+            src={ElephantBg}
+            alt="Majestic Elephant"
+            className="w-full h-full object-cover"
+            style={{
+              filter: isHovered
+                ? "grayscale(20%) sepia(60%) hue-rotate(5deg) saturate(180%) brightness(0.8)"
+                : "grayscale(100%) sepia(0%) hue-rotate(0deg) saturate(100%) brightness(0.45)",
+              transform: isHovered ? "scale(1.03)" : "scale(1.08)",
+              transition: "all 1.5s ease-out",
+            }}
+          />
+        </motion.div>
+
         {/* Overlays for text readability - These stay on top of image */}
         <div className="absolute inset-0 bg-black/30" />
         <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-transparent to-black" />
@@ -134,10 +126,10 @@ export const Hero = () => {
       </div>
 
       {/* Content Container - Stays on top of background */}
-     <motion.div
-  style={{ y: yParallax, opacity }}
- className="max-w-4xl mx-auto text-center relative z-10 w-full -mt-16 sm:-mt-10 md:mt-12 lg:mt-16"
->
+      <motion.div
+        style={{ y: yParallax, opacity }}
+        className="max-w-4xl mx-auto text-center relative z-10 w-full -mt-35 sm:-mt-10 md:mt-12 lg:mt-16"
+      >
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -153,12 +145,12 @@ export const Hero = () => {
             Extended Sales Team
           </span>
         </motion.div>
-        
+
         <motion.h1
-  initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
-  animate={{ opacity: 1, filter: "blur(0)", y: 0 }}
-  transition={{ duration: 0.8 }}
-  className="
+          initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
+          animate={{ opacity: 1, filter: "blur(0)", y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="
     heading-italic
     text-[2.4rem]
     sm:text-6xl
@@ -173,13 +165,13 @@ export const Hero = () => {
     flex
     justify-center
   "
->
+        >
           <div className="flex flex-col items-center justify-center">
             <span>Own Your Market.</span>
             <span className="text-gold">Or Someone Else Will.</span>
           </div>
         </motion.h1>
-        
+
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -195,26 +187,26 @@ export const Hero = () => {
           you feel busy. We're your extended B2B sales team — built exclusively
           for Indian IT companies ready to stop chasing and start closing.
         </motion.p>
-        
+
         <motion.div
-  initial={{ opacity: 0, y: 20 }}
-  animate={{ opacity: 1, y: 0 }}
-  transition={{ duration: 0.8, delay: 0.4 }}
-  className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
->
-  <Link
-    to="/contact"
-    className="liquid-glass-gold px-6 md:px-8 py-3 md:py-4 rounded-full text-gold font-bold text-sm md:text-base flex items-center gap-2 hover:scale-105 transition-all"
-  >
-    Book a Strategy Call <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
-  </Link>
- <a
-  href="#results"
-  className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
->
-  See Our Results →
-</a>
-</motion.div>
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="flex flex-wrap items-center justify-center gap-3 md:gap-4"
+        >
+          <Link
+            to="/contact"
+            className="liquid-glass-gold px-6 md:px-8 py-3 md:py-4 rounded-full text-gold font-bold text-sm md:text-base flex items-center gap-2 hover:scale-105 transition-all"
+          >
+            Book a Strategy Call <ArrowUpRight className="w-3.5 h-3.5 md:w-4 md:h-4" />
+          </Link>
+          <a
+            href="#results"
+            className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
+          >
+            See Our Results →
+          </a>
+        </motion.div>
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -289,14 +281,13 @@ export const Journey = () => {
 
         <div ref={containerRef} className="relative">
           {/* Background Line */}
-          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2" />
+          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 md:-translate-x-1/2" />
 
           {/* Animated Foreground Line */}
           <motion.div
-            className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[3px] bg-gold -translate-x-1/2 origin-top rounded-full shadow-[0_0_15px_rgba(240,180,41,0.5)]"
+            className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[3px] bg-gold md:-translate-x-1/2 origin-top rounded-full shadow-[0_0_15px_rgba(240,180,41,0.5)]"
             style={{ scaleY: scrollYProgress }}
           />
-
           {milestones.map((m, i) => {
             const isEven = i % 2 === 0;
             return (
@@ -369,7 +360,7 @@ export const Marquee = () => {
     "Qualified Meetings",
     "IT Sector Expertise",
   ];
-  
+
   return (
     <div className="py-10 border-y border-white/5 overflow-hidden relative bg-black/40 backdrop-blur-sm">
       <div className="flex overflow-hidden relative w-full">
@@ -538,11 +529,11 @@ export const Stats = () => {
         style={{ y }}
         className="absolute inset-0 bg-gradient-to-br from-gold/[0.06] via-transparent to-gold/[0.03] pointer-events-none"
       />
-      
+
       {/* Remove the top gradient overlay - it's causing the extra space */}
       {/* Only keep bottom gradient for smooth transition */}
       <div className="absolute bottom-0 left-0 right-0 h-20 md:h-32 bg-gradient-to-t from-black/80 to-transparent z-10 pointer-events-none" />
-      
+
       <div className="max-w-4xl mx-auto relative z-20">
         <div className="text-center">
           <span className="inline-block px-3 md:px-4 py-1 rounded-full liquid-glass text-gold text-[10px] md:text-[11px] font-bold uppercase tracking-wider mb-3 md:mb-4">
@@ -558,7 +549,7 @@ export const Stats = () => {
             verifiably, in the Indian IT sector.
           </p>
         </div>
-        
+
         <div className="liquid-glass-strong p-5 sm:p-6 md:p-12 rounded-[32px] md:rounded-[40px] grid grid-cols-2 md:grid-cols-4 gap-5 md:gap-8 text-center mt-8 md:mt-12">
           {[
             { val: "6+", label: "Years in IT GTM" },
@@ -739,41 +730,41 @@ export const CTA = () => {
         style={{ y }}
         className="glow-orb w-[700px] h-[700px] bg-gold/20 top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
       />
-      
+
       {/* Reduced top gradient height on mobile */}
       <div className="absolute top-0 left-0 right-0 h-16 md:h-32 lg:h-40 bg-gradient-to-b from-black to-transparent z-10 pointer-events-none" />
-      
+
       <div className="max-w-3xl mx-auto relative z-20">
         <span className="inline-block px-3 md:px-4 py-1 rounded-full liquid-glass text-gold text-[10px] md:text-[11px] font-bold uppercase tracking-wider mb-4 md:mb-6 lg:mb-8">
           Let's Talk
         </span>
-        
+
         <h2 className="heading-italic text-3xl sm:text-4xl md:text-6xl lg:text-8xl mb-6 md:mb-8">
           Stop leaving enterprise
           <br />
           accounts on the table.
         </h2>
-        
+
         <p className="text-sm sm:text-base md:text-lg text-white/50 mb-8 md:mb-12 max-w-lg mx-auto font-light px-4">
           Book a 30-minute strategy call. We'll look at your market, your ICP,
           and what's actually blocking your pipeline. No pitch decks. No fluff.
         </p>
-        
+
         {/* FIXED: Changed from <a> to <Link> for both buttons */}
-      <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-  <Link
-    to="/contact"
-    className="bg-gold text-black px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full text-sm md:text-base font-bold hover:bg-gold/90 transition-all active:scale-95 shadow-xl shadow-gold/20"
-  >
-    Book a Strategy Call ↗
-  </Link>
-  <a
-    href="#results"
-    className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
-  >
-    See Our Results →
-  </a>
-</div>
+        <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
+          <Link
+            to="/contact"
+            className="bg-gold text-black px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full text-sm md:text-base font-bold hover:bg-gold/90 transition-all active:scale-95 shadow-xl shadow-gold/20"
+          >
+            Book a Strategy Call ↗
+          </Link>
+          <a
+            href="#results"
+            className="px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-full border border-white/10 text-white/70 font-medium hover:bg-white/5 transition-all text-sm md:text-base"
+          >
+            See Our Results →
+          </a>
+        </div>
         <p className="text-[10px] md:text-[11px] text-white/20 uppercase tracking-widest font-semibold">
           No credit card. No commitment. Just a conversation.
         </p>

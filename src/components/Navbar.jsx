@@ -29,19 +29,18 @@ export const Navbar = () => {
 
   return (
     <>
-      <nav className="fixed top-4 left-0 right-0 z-50 px-4 md:px-6 max-w-6xl mx-auto flex items-center justify-between transition-all duration-300">
-        <Link
+      <nav className="fixed top-2 md:top-4 left-0 right-0 z-50 px-3 md:px-6 max-w-6xl mx-auto flex items-center justify-between transition-all duration-300 pt-5">
+       <Link
   to="/"
   className={cn(
-    "flex items-center group rounded-full h-[52px] px-5 transition-all duration-500",
+    "flex items-center group rounded-full h-[32px] md:h-[52px] px-1 md:px-5 transition-all duration-500",
     isScrolled
       ? "liquid-glass border border-white/10"
       : "bg-transparent"
   )}
 >
-  <Logo className="h-7 md:h-8 w-auto object-contain group-hover:scale-105 transition-transform duration-300" />
+  <Logo className="h-2 md:h-6 max-w-[80px] md:max-w-none object-contain group-hover:scale-105 transition-transform duration-300" />
 </Link>
-
         {/* Desktop Nav */}
         <div
           className={cn(
@@ -79,10 +78,10 @@ export const Navbar = () => {
     to="/contact"
     className="bg-gold text-black font-bold rounded-full flex items-center gap-1 hover:bg-gold/90 transition-all"
     style={{
-      fontSize: '10px',
-      padding: '4px 10px',
-      minWidth: '48px',
-      height: '28px',
+      fontSize: '9px',
+      padding: '3px 8px',
+      minWidth: '42px',
+      height: '24px',
     }}
   >
     Book <ArrowUpRight className="w-2.5 h-2.5" />
