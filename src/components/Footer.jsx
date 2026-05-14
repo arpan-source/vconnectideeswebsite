@@ -40,7 +40,7 @@ export const Footer = () => {
       </Link>
     </li>
 
-    <li>
+    {/* <li>
   <a href="#results" className="text-[13px] text-white/40 hover:text-gold transition-colors">
     Results
   </a>
@@ -50,7 +50,7 @@ export const Footer = () => {
   <a href="#faq" className="text-[13px] text-white/40 hover:text-gold transition-colors">
     FAQs
   </a>
-</li>
+</li> */}
   </ul>
 </div>
 
