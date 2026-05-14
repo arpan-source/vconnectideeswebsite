@@ -9,6 +9,7 @@ import {
   useMotionValue,
   useSpring,
 } from "motion/react";
+
 import {
   ArrowUpRight,
   Plus,
@@ -20,14 +21,17 @@ import {
 import { cn } from "../lib/utils";
 import { Link } from 'react-router-dom';
 import ElephantBg from '../assets/Images/Elephant-bg.jpeg';
+
 export const AnimatedCounter = ({ value }) => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-50px" });
+  const isInView = useInView(ref, {
+    once: true,
+    margin: "0px 0px -20% 0px"
+  });
 
   const match = value.match(/(\d+)/);
 
   useEffect(() => {
-    const match = value.match(/(\d+)/);
     if (!match || !isInView || !ref.current) return;
 
     const numStr = match[1];
@@ -46,7 +50,7 @@ export const AnimatedCounter = ({ value }) => {
     });
 
     return controls.stop;
-  }, [isInView, value]);
+  }, [isInView]);
 
   if (!match) {
     return <span>{value}</span>;
@@ -58,7 +62,7 @@ export const AnimatedCounter = ({ value }) => {
 
   return (
     <span ref={ref}>
-      {prefix}0{suffix}
+      {prefix}{0}{suffix}
     </span>
   );
 };
@@ -98,13 +102,13 @@ export const Hero = () => {
       {/* Background Image Container - Fixed to stay behind */}
       <div className="absolute inset-0 z-0">
         {/* Mouse move effect container */}
-       <motion.div
-  style={{
-    x: springX,
-    y: springY,
-  }}
-  className="absolute left-0 right-0 top-20 md:top-0 w-[110%] h-[110%]"
->
+        <motion.div
+          style={{
+            x: springX,
+            y: springY,
+          }}
+          className="absolute left-0 right-0 top-20 md:top-0 w-[110%] h-[110%]"
+        >
           <img
             src={ElephantBg}
             alt="Majestic Elephant"
@@ -145,7 +149,6 @@ export const Hero = () => {
             Extended Sales Team
           </span>
         </motion.div>
-
         <motion.h1
           initial={{ opacity: 0, filter: "blur(12px)", y: 20 }}
           animate={{ opacity: 1, filter: "blur(0)", y: 0 }}
@@ -156,20 +159,21 @@ export const Hero = () => {
     sm:text-6xl
     md:text-7xl
     lg:text-8xl
-    xl:text-9xl
+    xl:text-8xl
     mb-4
     md:mb-6
     text-center
     leading-[1.05]
     w-full
-    flex
-    justify-center
   "
         >
-          <div className="flex flex-col items-center justify-center">
-            <span>Own Your Market.</span>
-            <span className="text-gold">Or Someone Else Will.</span>
-          </div>
+          <span className="block">
+            Own Your Market
+          </span>
+
+          <span className="block text-gold">
+            Or Someone Else Will.
+          </span>
         </motion.h1>
 
         <motion.p
@@ -281,13 +285,12 @@ export const Journey = () => {
 
         <div ref={containerRef} className="relative">
           {/* Background Line */}
-          <div className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 md:-translate-x-1/2" />
-
+      <div className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[2px] bg-white/10 md:-translate-x-1/2" />
           {/* Animated Foreground Line */}
           <motion.div
-            className="absolute left-[24px] md:left-1/2 top-0 bottom-0 w-[3px] bg-gold md:-translate-x-1/2 origin-top rounded-full shadow-[0_0_15px_rgba(240,180,41,0.5)]"
-            style={{ scaleY: scrollYProgress }}
-          />
+  className="absolute left-6 md:left-1/2 top-0 bottom-0 w-[3px] bg-gold md:-translate-x-1/2 origin-top rounded-full shadow-[0_0_15px_rgba(240,180,41,0.5)]"
+  style={{ scaleY: scrollYProgress }}
+/>
           {milestones.map((m, i) => {
             const isEven = i % 2 === 0;
             return (
@@ -313,11 +316,11 @@ export const Journey = () => {
                   viewport={{ once: true, margin: "-100px" }}
                   transition={{ duration: 0.6, delay: 0.3 }}
                   className={cn(
-                    "w-full md:w-1/2 pl-20 md:pl-0",
-                    isEven
-                      ? "md:pr-24 md:text-right"
-                      : "md:pl-24 md:ml-auto text-left",
-                  )}
+  "w-full md:w-1/2 pl-14 md:pl-0",
+  isEven
+    ? "md:pr-24 md:text-right"
+    : "md:pl-24 md:ml-auto text-left",
+)}
                 >
                   <div className="group relative transition-all duration-500 hover:-translate-y-1">
                     {/* Connecting subtle line for desktop */}
@@ -752,10 +755,10 @@ export const CTA = () => {
 
         {/* FIXED: Changed from <a> to <Link> for both buttons */}
         <div className="flex flex-wrap items-center justify-center gap-3 md:gap-4 mb-8 md:mb-12">
-  
-  <Link
-    to="/contact"
-    className="
+
+          <Link
+            to="/contact"
+            className="
       flex items-center justify-center
       bg-gold text-black
       px-6 md:px-8 lg:px-10
@@ -770,13 +773,13 @@ export const CTA = () => {
       active:scale-95
       shadow-xl shadow-gold/20
     "
-  >
-    Book a Strategy Call ↗
-  </Link>
+          >
+            Book a Strategy Call ↗
+          </Link>
 
-  <a
-    href="#results"
-    className="
+          <a
+            href="#results"
+            className="
       flex items-center justify-center
       px-6 md:px-8 lg:px-10
       h-[48px] md:h-auto
@@ -790,11 +793,11 @@ export const CTA = () => {
       hover:bg-white/5
       transition-all
     "
-  >
-    See Our Results →
-  </a>
+          >
+            See Our Results →
+          </a>
 
-</div>
+        </div>
         <p className="text-[10px] md:text-[11px] text-white/20 uppercase tracking-widest font-semibold">
           No credit card. No commitment. Just a conversation.
         </p>

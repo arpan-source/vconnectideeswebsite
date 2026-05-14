@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
+import { useEffect, useState } from "react";
 import {
   Users,
   Calendar,
@@ -122,6 +123,7 @@ const Team = () => {
   );
 }
 
+
 export const About = () => {
   const stats = [
     {
@@ -194,7 +196,7 @@ export const About = () => {
                   >
                     <div className="text-gold mb-2 md:mb-3 opacity-60">{s.icon}</div>
                     <div className="heading-italic text-2xl md:text-3xl mb-1">
-                      <AnimatedCounter value={s.val} />
+                   <AnimatedCounter key={`${s.val}-${i}`} value={s.val} />
                     </div>
                     <div className="text-[9px] md:text-[10px] text-white/30 uppercase tracking-widest font-bold">
                       {s.label}
