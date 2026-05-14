@@ -47,7 +47,7 @@ const TestimonialCarousel = () => {
       logo: "https://picsum.photos/seed/cloudscale/120/40"
     },
     {
-      quote: "The embedded team approach works flawlessly. It feels like they are sitting right next to us. The quality of BANT-qualified leads has been exceptional.",
+      quote: "vConnect IQ helps us to connect with our potential leads and continue to strive to meet and exceed their goals",
       author: "Palani Stratworks",
       role: "CEO",
       company: "Innovate IT",
@@ -61,7 +61,7 @@ const TestimonialCarousel = () => {
       logo: "https://picsum.photos/seed/innovate/120/40"
     },
      {
-      quote: "The embedded team approach works flawlessly. It feels like they are sitting right next to us. The quality of BANT-qualified leads has been exceptional.",
+      quote: "No Lead Generation agency will guarantee you perfect leads but what makes vConnect stand of the crowd is their level of customer service and being available for us 24/7.",
       author: "Maitray Trivedi",
       role: "CEO",
       company: "Innovate IT",
