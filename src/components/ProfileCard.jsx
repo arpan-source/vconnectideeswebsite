@@ -52,7 +52,7 @@ export function ProfileCard({
       className="w-full bg-white text-black py-3 px-4 rounded-full font-semibold text-xs sm:text-sm flex items-center justify-center gap-2"
     >
       <Linkedin className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-      Connect on Linkedin
+      Connect on LinkedIn
     </button>
         </div>
       </div>
