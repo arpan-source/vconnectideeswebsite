@@ -151,8 +151,74 @@ export const BlogPost = () => {
           document.head.appendChild(script);
         }
       }
+       else if (slug === 'how-to-personalize-cold-emails-without-making-it-weird') {
+        const faqSchema = {
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How much research should I do before writing a cold email?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "There's no fixed number of minutes to spend, but a good rule of thumb is this — if you couldn't write at least one sentence specific to that company or person, you haven't researched enough. Five to ten focused minutes per prospect is usually sufficient for a strong, personalized opener."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What's the difference between personalization and being invasive?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The line comes down to context — professional versus personal. Referencing company expansion or industry challenges is personalization. Mentioning vacation photos or personal hobbies is invasive. A simple test: would this detail feel relevant in a professional meeting?"
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Why isn't my cold email getting replies even though I'm personalizing it?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Personalization is just one piece of the puzzle. Consider your subject line, call-to-action, email length, and follow-up strategy. A large portion of cold email replies come from follow-ups, not the first email."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How many follow-up emails should I send, and how far apart?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Three follow-ups is the sweet spot. Send first follow-up 2-3 days after the original, second 5-7 days after that, and final one 1-2 weeks later. Each follow-up should add something new."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What metrics should I track to know if my cold email campaign is working?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Track four metrics: open rates (subject line performance), reply rates (message engagement), click rates (offer interest), and reply quality (targeting accuracy)."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can cold emails actually build long-term relationships?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes — when approached with the right intent. Consistent, relevant, respectful emails focused on helping rather than selling build a reputation as someone worth talking to."
+              }
+            }
+          ]
+        };
+
+        const existingScript = document.getElementById('faq-schema');
+        if (!existingScript) {
+          const script = document.createElement('script');
+          script.id = 'faq-schema';
+          script.type = 'application/ld+json';
+          script.innerHTML = JSON.stringify(faqSchema);
+          document.head.appendChild(script);
+        }
+      }
     }
   }, [post, slug]);
+  
 
   if (!post) {
     return (
