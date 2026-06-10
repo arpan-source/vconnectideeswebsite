@@ -278,7 +278,7 @@ export const BlogPost = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="rounded-2xl overflow-hidden mb-16 h-[50vh] relative"
+          className="rounded-2xl overflow-hidden mb-16 h-[70vh] relative"
         >
           <div className="absolute inset-0 bg-black/20" />
           <img 
